@@ -1,34 +1,34 @@
 // Homework 1 for Solvd IT Academy.
 
-String.prototype.Plus = function (stringNumber) {
+String.prototype.plus = function (stringNumber) {
     const result = parseInt(this) + parseInt(stringNumber);
 
     return result.toString();
 }
 
-String.prototype.Minus = function (stringNumber) {
+String.prototype.minus = function (stringNumber) {
     const result = parseInt(this) - parseInt(stringNumber);
 
     return result.toString();
 }
 
-String.prototype.Divide = function (stringNumber) {
+String.prototype.divide = function (stringNumber) {
     const result = parseInt(this) / parseInt(stringNumber);
 
     return result.toString();
 }
 
 
-String.prototype.Multiply = function (stringNumber) {
+String.prototype.multiply = function (stringNumber) {
     const result = parseInt(this) * parseInt(stringNumber);
 
     return result.toString();
 }
 
-const plusResult = "123".Plus("1");
-const minusResult = "123".Minus("1");
-const divideResult = "100".Divide("2");
-const multiplyResult = "100".Multiply("2");
+const plusResult = "123".plus("1");
+const minusResult = "123".minus("1");
+const divideResult = "100".divide("2");
+const multiplyResult = "100".multiply("2");
 
 console.log(`Plus Result: ${plusResult}. The type of the result is ${typeof plusResult}`);
 console.log(`Minus Result: ${minusResult}. The type of the result is ${typeof minusResult}`);
