@@ -107,37 +107,50 @@ String.prototype.multiply = function (numberToMultiply) {
     return result;
 };
 
+// The function takes two numbers as strings and returns their quotient as a string.
 String.prototype.divide = function (numberToDivideBy) {
 
+    // Convert the input strings to numbers
     let dividend = Number(this);
     let divisor = Number(numberToDivideBy);
 
+    // Check for NaN inputs
     CheckForNaN(dividend, divisor);
 
+    // Check if divisor is equal to zero and return an error if it is
     if (divisor === 0) {
         return "Zero division error";
     }
 
+    // Check if dividend is smaller than divisor, return '0' if it is
     if (dividend < divisor) {
         return "0";
     }
 
+    // Initialize variables for storing the result and current value
     let result = "";
     let currentValue = 0;
 
+    // Iterate through each digit of the dividend
     for (let i = 0; i < this.length; i++) {
+        // Update the current value by adding the next digit
         currentValue = currentValue * 10 + Number(this[i]);
         let quotient = 0;
 
+        // Determine the largest quotient that can be achieved
         while (currentValue >= divisor) {
             currentValue -= divisor;
             quotient++;
         }
 
+        // Add the quotient digit to the result
         result += quotient;
     }
 
+    // Trim leading zeros from the result
     result = TrimLeadingZeroes(result)
+
+    // Return the result
     return result;
 };
 
@@ -171,5 +184,3 @@ function TrimLeadingZeroes(result) {
 
     return result;
 }
-
-console.log("9453495394594395".divide("50000000000000"));
