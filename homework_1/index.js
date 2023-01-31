@@ -107,55 +107,24 @@ String.prototype.multiply = function (numberToMultiply) {
     return result;
 };
 
-// The function takes two numbers as strings and returns their quotient as a string.
 String.prototype.divide = function (numberToDivideBy) {
-
-    // Convert input strings to numbers
     let dividend = this.toString();
     let divisor = numberToDivideBy.toString();
 
-    // Check for NaN inputs
     CheckForNaN(dividend, divisor);
 
-    // Check if divisor is equal to zero and return an error if it is
     if (divisor === "0") {
         return "Zero division error";
     }
 
-    // Check if dividend is smaller than divisor, return '0' if it is
-    if (dividend < divisor) {
-        return "0";
-    }
+    // Convert the dividend and divisor to floating-point numbers
+    dividend = parseFloat(dividend);
+    divisor = parseFloat(divisor);
 
-    // Initialize variables for storing the result and current value
-    let result = "";
-    let currentValue = "";
+    // Perform the division and return the result as a string
+    return (dividend / divisor).toString();
+}
 
-    // Iterate through each digit of the dividend
-    for (let dividendIndex = 0; dividendIndex < dividend.length; dividendIndex++) {
-        currentValue += dividend[dividendIndex];
-        let quotient = 0;
-
-        // Determine the largest quotient that can be achieved
-        while (currentValue >= divisor) {
-            currentValue = (currentValue - divisor).toString();
-            quotient++;
-        }
-
-        // Add the quotient digit to the result
-        result += quotient;
-
-        // If we reach the end of the dividend and current value is not equal to zero, add a decimal point
-        if (dividendIndex === dividend.length - 1 && currentValue !== "0") {
-            result += ".";
-        }
-    }
-
-    // Trim leading zeros from the result
-    result = TrimLeadingZeroes(result);
-
-    return result;
-};
 
 function CheckForNaN(firstNumber, secondNumber) {
     if (isNaN(firstNumber) || isNaN(secondNumber)) {

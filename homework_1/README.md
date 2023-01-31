@@ -18,8 +18,7 @@ There are mainly two ways to process large numbers without the explicit usage of
 
 We will be using the second method as it is more intuitive and easier to implement.
 
-### Notes ###
+### Notes and Known Issues ###
 - Bitwise operators can be used to enhance the performance of the algorithm, but they make the code much less readable.
 - The String.prototype.minus() function does not support negative numbers.
 - The String.prototype.multiply() has precision issues regarding zeroes if the number is large.
-- The String.prototype.divide() function does not support decimal division.
