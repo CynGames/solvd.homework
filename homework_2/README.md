@@ -9,8 +9,6 @@ sum(1)(2) //2
 sum(1)(2)(3)(4)(5)(6)(7) //28
 ```
 
-# - #
-
 ## Task 2 ## 
 Create a 'debounced' function that delays invoking function 
 until after wait milliseconds have elapsed since the last time the debounced function was invoked.
@@ -21,8 +19,3 @@ Subsequent calls to the debounced function return the result of the last func in
 ```
 debounce(func, [wait=0])
 ```
-
-## Solution Process ##
-
-
-### Notes and Known Issues ###
