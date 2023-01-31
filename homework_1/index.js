@@ -108,22 +108,38 @@ String.prototype.multiply = function (numberToMultiply) {
 };
 
 String.prototype.divide = function (numberToDivideBy) {
-    let dividend = this.toString();
-    let divisor = numberToDivideBy.toString();
+
+    let dividend = Number(this);
+    let divisor = Number(numberToDivideBy);
 
     CheckForNaN(dividend, divisor);
 
-    if (divisor === "0") {
+    if (divisor === 0) {
         return "Zero division error";
     }
 
-    // Convert the dividend and divisor to floating-point numbers
-    dividend = parseFloat(dividend);
-    divisor = parseFloat(divisor);
+    if (dividend < divisor) {
+        return "0";
+    }
 
-    // Perform the division and return the result as a string
-    return (dividend / divisor).toString();
-}
+    let result = "";
+    let currentValue = 0;
+
+    for (let i = 0; i < this.length; i++) {
+        currentValue = currentValue * 10 + Number(this[i]);
+        let quotient = 0;
+
+        while (currentValue >= divisor) {
+            currentValue -= divisor;
+            quotient++;
+        }
+
+        result += quotient;
+    }
+
+    result = TrimLeadingZeroes(result)
+    return result;
+};
 
 
 function CheckForNaN(firstNumber, secondNumber) {
@@ -155,3 +171,5 @@ function TrimLeadingZeroes(result) {
 
     return result;
 }
+
+console.log("9453495394594395".divide("50000000000000"));
