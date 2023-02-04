@@ -1,40 +1,51 @@
 // Homework 2 - Part 3 for Solvd IT Academy.
 
-function generateArray() {
-    let arr = [];
+// Define the quicksort function
+function quicksort(array, start, end) {
 
-    for (let i = 0; i < 30; i++) {
-        arr.push(Math.floor(Math.random() * 100));
-    }
+    // Base case: return if the start index is greater than or equal to the end index
+    if (start >= end) return;
 
-    return arr;
+    // Partition the array
+    let partitionIndex = partition(array, start, end);
+
+    // Recursively sort the left side of the partition
+    quicksort(array, start, partitionIndex - 1);
+
+    // Recursively sort the right side of the partition
+    quicksort(array, partitionIndex + 1, end);
 }
 
+// Define the partition function
+function partition(array, start, end) {
 
-// Middle pivot sorting strategy for quicksort
-function quickSort(elementsArray) {
+    // Choose the end element as the pivot value
+    let pivotValue = array[end];
 
-    let randomlyAssembledArray = elementsArray;
+    // Start the partition index at the start of the array
+    let partitionIndex = start;
 
-    if (randomlyAssembledArray.length < 2) return;
+    // Iterate through the array from the start to the end
+    for (let i = start; i < end; i++) {
 
-    const pivot = randomlyAssembledArray[randomlyAssembledArray.length / 2 - 1]
+        // If the current element is less than or equal to the pivot value
+        if (array[i] <= pivotValue) {
 
-    const arrayLess = randomlyAssembledArray.slice(0, randomlyAssembledArray.length / 2 - 1);
-    const arrayMore = randomlyAssembledArray.slice(randomlyAssembledArray.length / 2, randomlyAssembledArray.length);
+            // Swap the current element with the partition index
+            [array[i], array[partitionIndex]] = [array[partitionIndex], array[i]];
 
-    for (let i = 0; i < randomlyAssembledArray.length; i++) {
-
-        // let elementInspected = randomlyAssembledArray[i];
-        //
-        // if(elementInspected <= pivot)
+            // Increment the partition index;
+            partitionIndex++;
+        }
     }
 
-    // console.log(randomlyAssembledArray)
-    // console.log(pivot)
-    //
-    // console.log(arrayLess)
-    // console.log(arrayMore)
+    // Swap the partition index with the pivot value
+    [array[partitionIndex], array[end]] = [array[end], array[partitionIndex]];
+
+    // Return the partition index
+    return partitionIndex;
 }
 
-quickSort(generateArray());
+module.exports = {
+    quicksort
+}
