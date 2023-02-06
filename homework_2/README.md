@@ -11,7 +11,7 @@ sum(1)(2)(3)(4)(5)(6)(7) //28
 
 ## Solution ##
 
-The file with the solution to this task is called `closureSum.js`
+The file with the solution to this task is called `closureSum.js`, inside folder `task_1`.
 
 ## Task 2 ## 
 Create a 'debounced' function that delays invoking function 
@@ -26,7 +26,7 @@ debounce(func, [wait=0])
 
 ## Solution ##
 
-The file with the solution to this task is called `debounce.js`
+The file with the solution to this task is called `debounce.js`, inside folder `task_2`.
 
 ## Task 3 ## 
 Find length of array on which QuickSort starts working faster than BubbleSort.
@@ -44,7 +44,7 @@ After you found result you can check few more length to compare how fast time gr
 
 ## Solution ##
 
-- Both **QuickSort** and **BubbleSort** are implemented in the sortingAlgorithms.js file.
+- Both **QuickSort** and **BubbleSort** are implemented in the sortingAlgorithms.js file, inside folder `task_3`.
 - The file called `helpers.js` contains functions to return arrays in different formats (random, sorted, sorted backwards) and functions to compare time performance of algorithms. 
 - The file called `algorithmsTestCases.js` contains the test cases for which BubbleSort performs worse than QuickSort.
 
@@ -58,31 +58,4 @@ For the following Θ-difficulties, write strict and non-strict O-limits and, opt
 
 ## Solution ##
 
-1. Θ(1)
-- Strict O-limit: O(1)
-- Strict Ω-limit: Ω(1)
-- Non-strict O-limit: O(1)
-- Non-strict Ω-limit: Ω(1)
-
-2. 0(√n)
-- Strict O-limit: O(√n)
-- Strict Ω-limit: O(√n)
-
-3. Θ(n)
-- Strict O-limit: O(n)
-- Strict Ω-limit: Ω(n)
-- Non-strict O-limit: O(n)
-- Non-strict Ω-limit: Ω(n)
-
-4. Θ(n^2)
-- Strict O-limit: O(n^2)
-- Strict Ω-limit: Ω(n^2)
-
-5. Θ(n^3)
-- Strict O-limit: O(n^3)
-- Strict Ω-limit: Ω(n^3)
-
-## Graphs with common Time Complexities ##
-
-![](https://upload.wikimedia.org/wikipedia/commons/7/7e/Comparison_computational_complexity.svg)
-![img.png](img.png)
+Solution is inside folder `task_4`.
