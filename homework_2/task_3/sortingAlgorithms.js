@@ -3,19 +3,16 @@
 function quicksort(array, start = 0, end = array.length - 1) {
 
     // Base case: return if the start index is greater than or equal to the end index
-    if (start >= end) return array.slice();
+    if (start >= end) return;
 
     // Partition the array
     let partitionIndex = partition(array, start, end);
 
     // Recursively sort the left side of the partition
-    let left = quicksort(array, start, partitionIndex - 1);
+    quicksort(array, start, partitionIndex - 1);
 
     // Recursively sort the right side of the partition
-    let right = quicksort(array, partitionIndex + 1, end);
-
-    // Concatenate the left, pivot and right arrays
-    return [...left, array[partitionIndex], ...right];
+    quicksort(array, partitionIndex + 1, end);
 }
 
 function partition(array, start, end) {
