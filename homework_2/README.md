@@ -43,9 +43,9 @@ When you reach result, run it few times to check different random on arrays.
 After you found result you can check few more length to compare how fast time growth on BubbleSort comparing to QuickSort.
 
 ## Solution ##
-After performing 100 iterations with each algorithm under the required conditions, the result is that at around the 150 element mark BubbleSort starts performing worse than QuickSort.
+After performing 100 iterations with each algorithm under the required conditions, the result is that at around the **80 element mark** BubbleSort starts performing worse than QuickSort.
 The process I chose in determining that is to compare the results gathered from aggregating all the averages taken from the 100 iterations from each array type (sorted ascending, descending and unsorted).
-That results in a single number symbolizing the total average time taken and makes it easy to compare.
+That results in a single number symbolizing the **total average time taken** and makes it easy to compare.
 
 ![img.png](task_3/algorithm_results.png)
 

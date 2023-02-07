@@ -1,7 +1,7 @@
 const helpers = require('./helpers');
 const sortingAlgorithms = require('./sortingAlgorithms');
 
-const lengthOfArray = 150;
+const lengthOfArray = 80;
 
 function getAlgorithmMeasurement(algorithmFunction, numberOfIterations) {
     let sortedAscendingAvgResults = 0;

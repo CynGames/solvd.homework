@@ -18,7 +18,8 @@ function quicksort(array, start = 0, end = array.length - 1) {
 function partition(array, start, end) {
 
     // Choose a random index as the pivot value
-    let pivotIndex = Math.floor(Math.random() * (end - start + 1) + start);
+    // let pivotIndex = Math.floor(Math.random() * (end - start + 1) + start);
+    let pivotIndex = Math.floor(Math.random() * end);
     let pivotValue = array[pivotIndex];
 
     // Swap the pivot value with the end element
@@ -29,10 +30,13 @@ function partition(array, start, end) {
 
     // Iterate through the array from the start to the end
     for (let i = start; i < end; i++) {
+
         // If the current element is less than or equal to the pivot value
         if (array[i] <= pivotValue) {
+
             // Swap the current element with the partition index
             [array[i], array[partitionIndex]] = [array[partitionIndex], array[i]];
+
             // Increment the partition index;
             partitionIndex++;
         }
@@ -54,12 +58,11 @@ function bubbleSort(array) {
         // compare each pair of adjacent elements
         for (let i = 0; i < length; i++) {
 
-            // if the current element is greater than the next element, swap them
+            // if the current element is greater than the next element
             if (array[i] > array[i + 1]) {
 
-                let temp = array[i];
-                array[i] = array[i + 1];
-                array[i + 1] = temp;
+                // Swap them
+                [array[i], array[i + 1]] = [array[i + 1], array[i]]
             }
         }
     }
