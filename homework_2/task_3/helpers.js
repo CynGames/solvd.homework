@@ -16,36 +16,15 @@ function sortArray(array, reverse = false) {
     return resultingArray;
 }
 
-function measureTime(sortingAlgorithmFunction, sortingAlgorithmName, originalArrayState) {
+function measureTime(sortingAlgorithmFunction) {
     let start = performance.now();
     sortingAlgorithmFunction();
     let end = performance.now();
 
     const result = (end - start).toFixed(4)
-    console.log(`Time taken to run ${originalArrayState} with ${sortingAlgorithmName}: ${result} milliseconds`);
 
-    return result;
+    return Number(result);
 }
-
-function addResultToObject(result, initialSortingState)
-{
-    // if (initialSortingState === "ascending")
-    // return {...currentObjState, result}
-}
-
-function findFastestAlgorithm(quicksortTimeTakenResult, bubbleSortTimeTakenResult,) {
-
-    // if (quicksortTimeTakenResult > bubbleSortTimeTakenResult)
-
-    return quicksortTimeTakenResult > bubbleSortTimeTakenResult ? bubbleSortTimeTakenResult : quicksortTimeTakenResult;
-}
-
-function outputResult(arrLength, originalArrState,) {
-
-
-}
-
-
 
 module.exports = {
     generateArray,

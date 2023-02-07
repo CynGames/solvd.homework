@@ -17,21 +17,22 @@ function quicksort(array, start = 0, end = array.length - 1) {
 
 function partition(array, start, end) {
 
-    // Choose the end element as the pivot value
-    let pivotValue = array[end];
+    // Choose a random index as the pivot value
+    let pivotIndex = Math.floor(Math.random() * (end - start + 1) + start);
+    let pivotValue = array[pivotIndex];
+
+    // Swap the pivot value with the end element
+    [array[pivotIndex], array[end]] = [array[end], array[pivotIndex]];
 
     // Start the partition index at the start of the array
     let partitionIndex = start;
 
     // Iterate through the array from the start to the end
     for (let i = start; i < end; i++) {
-
         // If the current element is less than or equal to the pivot value
         if (array[i] <= pivotValue) {
-
             // Swap the current element with the partition index
             [array[i], array[partitionIndex]] = [array[partitionIndex], array[i]];
-
             // Increment the partition index;
             partitionIndex++;
         }
@@ -44,28 +45,26 @@ function partition(array, start, end) {
     return partitionIndex;
 }
 
+
 function bubbleSort(array) {
 
-    // Get the length of the array
-    let length = array.length - 1;
+    // loop through the array, starting from the end and working backwards
+    for (let length = array.length - 1; length >= 0; length--) {
 
-    // Loop through the array, comparing each pair of adjacent elements
-    for (let i = 0; i < length - 1; i++) {
+        // compare each pair of adjacent elements
+        for (let i = 0; i < length; i++) {
 
-        for (let j = 0; j < length - i - 1; j++) {
+            // if the current element is greater than the next element, swap them
+            if (array[i] > array[i + 1]) {
 
-            // If the current element is greater than the next element, swap them
-            if (array[j] > array[j + 1]) {
-
-                let temp = array[j];
-
-                array[j] = array[j + 1];
-                array[j + 1] = temp;
+                let temp = array[i];
+                array[i] = array[i + 1];
+                array[i + 1] = temp;
             }
         }
     }
 
-    // Return the sorted array
+    // return the sorted array
     return array;
 }
 
