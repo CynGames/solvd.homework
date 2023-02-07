@@ -18,7 +18,6 @@ function quicksort(array, start = 0, end = array.length - 1) {
 function partition(array, start, end) {
 
     // Choose a random index as the pivot value
-    // let pivotIndex = Math.floor(Math.random() * (end - start + 1) + start);
     let pivotIndex = Math.floor(Math.random() * end);
     let pivotValue = array[pivotIndex];
 
