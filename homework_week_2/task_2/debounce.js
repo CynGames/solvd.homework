@@ -17,7 +17,7 @@ function debounce(func, wait = 1000) {
 
     // Set a new timeout for the latest invoked function
     timeoutId = setTimeout(latestInvokedFunction, wait);
-};
+}
 
 // Test functions
 let test_A = () => console.log('first test');

@@ -14,7 +14,7 @@ function sum(baseNumber) {
     }
 
     return func;
-};
+}
 
 const firstCase = sum(1);
 const secondCase = sum(1)(2);
