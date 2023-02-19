@@ -39,12 +39,12 @@ class eventEmitter {
 
 const emitter = new eventEmitter()
 
-emitter.on("buttonClicked", () => {
-    console.log("Button Clicked 1")
+emitter.on("buttonClicked", (withArgs) => {
+    console.log("Button Clicked 1 " + withArgs)
 });
 
 emitter.on("buttonClicked", () => {
-    console.log("Button Clicked 2")
+    console.log("Button Clicked 2 ")
 });
 
 emitter.on("buttonClicked", () => {
@@ -63,4 +63,4 @@ emitter.on("buttonClicked", callbackTest);
 
 emitter.removeListener("buttonClicked", callbackTest);
 
-emitter.emit("buttonClicked")
+emitter.emit("buttonClicked", "The args are passed")
