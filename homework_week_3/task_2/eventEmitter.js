@@ -10,9 +10,9 @@ class eventEmitter {
         const eventCallbacks = this.getEventCallbacks(eventName);
 
         if (eventCallbacks) {
-            eventCallbacks.forEach((callback) => {
-                callback(...args);
-            });
+            for (let i = 0; i < eventCallbacks.length; i++) {
+                eventCallbacks[i](...args);
+            }
         }
     }
 
