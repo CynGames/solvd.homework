@@ -19,3 +19,21 @@ Create your own realisation of EventEmitter. It should support 4 methods:
 
 The `eventEmitter.js` file contains the solution for this task.
 
+## Task 3 ##
+
+We are given a stack data structure with push and pop operations, 
+the task is to implement a queue using instances of stack data structure and operations on them.
+
+## Solution ##
+
+The `twoStacksOneQueue.js` file contains the solution for this task.
+
+## Task 4 ##
+
+1 - Realize class LinkedList with possibilities to add, remove and find element and function to check is there a loop in Linked list (for checking list fir a loop please use Floyd algorithm)
+2 - (optional) Develop realisation of black-red tree, it should have next functions:  add element to the tree, remove element from a tree, find element on a tree, get max and min depth in a tree
+
+## Solution ##
+
+The `linkedList.js` file contains the solution for this task.
+Note: The optional task is not yet implemented.
