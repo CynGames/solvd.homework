@@ -10,7 +10,6 @@ class Queue {
     }
 
     enqueue(val) {
-
         // Move all elements from "stack_a" to "stack_b".
         while (this.stack_a.length > 0) {
             this.stack_b.push(this.stack_a.pop());
@@ -26,7 +25,6 @@ class Queue {
     }
 
     dequeue() {
-
         if (this.stack_a.length === 0) {
             return null;
         }
@@ -45,8 +43,8 @@ queue.enqueue(1);
 queue.enqueue(123);
 queue.enqueue(12345);
 
-console.log(queue.dequeue()); // output: 1
-console.log(queue.dequeue()); // output: 123
-console.log(queue.isEmpty()); // output: false
-console.log(queue.dequeue()); // output: 12345
-console.log(queue.isEmpty()); // output: true
+console.log(queue.dequeue()); // Should be 1
+console.log(queue.dequeue()); // Should be 123
+console.log(queue.isEmpty()); // Should be false
+console.log(queue.dequeue()); // Should be 12345
+console.log(queue.isEmpty()); // Should be true
