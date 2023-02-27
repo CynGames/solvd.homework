@@ -9,14 +9,14 @@ class Queue {
         this.stack_b = [];
     }
 
-    enqueue(val) {
+    enqueue(data) {
         // Move all elements from "stack_a" to "stack_b".
         while (this.stack_a.length > 0) {
             this.stack_b.push(this.stack_a.pop());
         }
 
         // Push the new element to "stack_a".
-        this.stack_a.push(val);
+        this.stack_a.push(data);
 
         // Move all elements from "stack_b" to "stack_a".
         while (this.stack_b.length > 0) {
