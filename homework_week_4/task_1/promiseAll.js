@@ -7,7 +7,7 @@ function promiseAll(promises) {
         let count = 0;
 
         // Loop iterates over the input promises and attaches a then and a catch method to the current promise.
-        // When it resolves in either way, the corresponding method will call the promise with the fulfilled value.
+        // When it resolves in either way, the corresponding method will call the promise with the assigned value.
         for (let i = 0; i < promises.length; i++) {
             promises[i]
                 .then((result) => {
